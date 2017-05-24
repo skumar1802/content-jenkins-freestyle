@@ -1,6 +1,4 @@
 pipeline {
-
-
 	agent {
 	      label 'RedHat'		
 }  	
