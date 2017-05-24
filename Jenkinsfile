@@ -12,4 +12,10 @@ pipeline {
                       }    				
                }	
          }
+	posts {
+		always {
+			
+			archive 'dist/*.jar'
+		}
+	}
 }
