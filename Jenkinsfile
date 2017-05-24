@@ -1,6 +1,8 @@
 pipeline {
 
-	agent any
+	agent {
+	    label 'MySlave RedHat'		
+}  	
 	
 	stages {
 	   stage('build') {
