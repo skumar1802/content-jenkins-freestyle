@@ -1,7 +1,7 @@
 pipeline {
 
 	agent {
-	    label 'MySlave RedHat'		
+	      label 'MySlave RedHat'		
 }  	
 	
 	stages {
