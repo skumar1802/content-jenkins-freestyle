@@ -15,7 +15,7 @@ pipeline {
 
 	   stage('build') {
 		agent { 
-			label 'RedHat'
+			label 'master'
 		}
 
 		steps {
