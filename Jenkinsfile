@@ -56,7 +56,18 @@ pipeline {
      			}
 			steps { 
 				sh "cp /var/www/html/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green/"
-			 }
+			 } 
+			post {
+			        success {
+            				emailext(
+                				subject: "${env.JOB_NAME} [${env.BUILD_NUMBER}] Ran!",
+                				body: """<p>'${env.JOB_NAME} [${env.BUILD_NUMBER}]' Ran!":</p>
+                    				<p>New Build is Deployed To Apache. Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]/a></p>""",
+                				to: “skumar1802@gmail.com”
+            )
+        }
+    }
+
 		}
 		
 	   stage ('Promote Development Branch to Master'){
