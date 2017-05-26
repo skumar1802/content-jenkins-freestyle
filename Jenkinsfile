@@ -43,7 +43,7 @@ pipeline {
 				docker "openjdk:8u121-jre"
 				}
 			steps{
-				sh "wget http://13.126.20.61/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar"
+				sh "wget http://35.154.135.56/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar"
 				sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
 			 }
 		}
